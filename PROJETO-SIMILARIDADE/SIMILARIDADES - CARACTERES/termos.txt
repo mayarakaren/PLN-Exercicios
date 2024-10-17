@@ -1,0 +1,36 @@
+Medida baseada em termos - JACCARD (SEMÂNTICA E SINTAXE)
+
+Frase 1: A situação faz o sapo pular. Vagabundo tem em todo lugar.
+
+Frase 2: O rato roeu o processo do vagabundo. Se fosse na minha empresa, você já estava fora!
+
+- Tokenização: 
+
+Frase 1: {A, SITUAÇÃO, FAZ, O, SAPO, PULAR, ., VAGABUNDO, TEM, EM, TODO, LUGAR, .}
+
+Frase 2: {O, RATO, ROEU, O, PROCESSO, DO, VAGABUNDO, ., SE, FOSSE, NA, MINHA, EMPRESA, ,, VOCÊ, JÁ, ESTAVA, FORA, !}
+
+- Remoção das Stopwords:
+
+Frase 1: {SITUAÇÃO, FAZ, SAPO, PULAR, VAGABUNDO, TEM, TODO, LUGAR} = 8
+
+Frase 2: {RATO, ROEU, PROCESSO, VAGABUNDO, SE, FOSSE, EMPRESA, VOCÊ, JÁ, ESTAVA, FORA} = 11
+
+- CÁLCULO DA MEDIDA DE JACCARD:
+
+1º Passo: Encontrar os termos em comum (intersecção)
+Palavras em comum = {VAGABUNDO}
+
+2º Passo: Realizar a união entre os termos dos dois conjuntos
+união = {SITUAÇÃO, FAZ, SAPO, PULAR, VAGABUNDO, TEM, TODO, LUGAR, RATO, ROEU, PROCESSO, SE, FOSSE, EMPRESA, VOCÊ, JÁ, ESTAVA, FORA}
+
+3º Passo: Determinar o número de Tokens em cada conjunto (intersecção e união)
+- intersecção: 1
+- união: 18
+
+4º Passo: Aplicar a fórmula: 
+JACCARD = intersecção/união
+
+Nesse caso: 1/18 = 5,6% de similaridade existente.
+
+*Obrigatório fazer Tokenização e remoção das Stopwords.

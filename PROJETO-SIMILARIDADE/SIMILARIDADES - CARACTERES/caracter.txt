@@ -1,0 +1,50 @@
+Medidas baseadas em caracteres - LEVENSHTEIN.
+
+Medidas de similaridade baseada em caracter levam em consideração cada simbolos das palavras, utilizando medidas de distancias, avaliando a forma como a palavra/texto é escrito.
+
+- Exemplo: 
+Corrida e Correria
+ Comparar a forma que elas são escritas, compando o primeiro caracter com o primeiro e caracter e achar a maior a palavra em comum entre as duas.
+
+ LEVENSHTEIN: Separar a palavra letra a letra, criando uma matriz
+
+ Algoritmo diz: 
+ - Antes de começar o cálculo, iniciar a matriz com zero em todos os valores.
+ - Pego a primeira letra que foi representada nas linhas e vai comparar com todas as letras que foi representada na coluna.
+ Letras iguais = 0
+ Letras diferentes = calculo a distancia dos vizinhos e somo 1.
+
+*Calculo da distância:
+
+      C O R R E R I A 
+    C (0) 1 1 1 1 1 1 1
+    O 1 (0) 1 1 1 1 1 1
+    R 1 1 (0) 0 1 0 1 1
+    R 1 1 0 (0) 1 0 1 1
+    I 1 1 1 1 1 1 0 1
+    D 1 1 1 1 1 1 1 1
+    A 1 1 1 1 1 1 1 0
+
+*Calculo da similaridade:
+O quanto correria é similiar a Corrida
+- Maior string possivel que é igual: Diagonal Principal (Sempre pegar a diagonal)/Pela Quantidade de letras da maior palavra
+nesse caso: 4 (letras iguais - Diagonal Principal)/8(Quantidade de letras da maior palavra)= 50% de similaridade
+
+7 Linhas 
+8 Colunas
+
+- Calculo de similaridade: 
+
+      A S S A D O 
+    P 1 1 1 1 1 1
+    A (0) 1 1 0 1 1
+    S 1 (0) 0 1 1 1
+    S 1 0 (0) 1 1 1
+    A 0 1 1 (0) 1 1
+    R 1 1 1 1 1 1
+    O 1 1 1 1 1 (0)
+
+- Se a diagonal escolhida tiver mais zeros pegar eles também.
+
+Taxa de similaridade (PASSARO, ASSADO):
+5/7 = 71% de similaridade
